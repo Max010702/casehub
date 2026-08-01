@@ -13,7 +13,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "moment": "^2.30.1"
+    "dotenv": "^16.0.0",
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "nodemon": "^3.0.2",
