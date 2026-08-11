@@ -13,3 +13,8 @@
   Traditional Api
   Rest Api
 */
+
+/**
+  Traditional FD => (BSSR) => EJS
+  Modern FD.     => (SPA)  => REACT
+ */
