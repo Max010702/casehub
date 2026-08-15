@@ -11,6 +11,8 @@ routerAdmin
   .get("/signup", storeController.getSignup)
   .post("/signup", storeController.processSignup);
 
+routerAdmin.get("/check-me", storeController.checkAuthSession);
+
 /** Product */
 
 /** User */
