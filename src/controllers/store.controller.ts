@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
-import { log } from "console";
 import { LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
 
@@ -11,7 +10,7 @@ const storeController: T = {};
 storeController.goHome = (req: Request, res: Response) => {
   try {
     console.log("goHome");
-    res.send("Home Page");
+    res.render("home");
   } catch (err) {
     console.log("Error, goHome", err);
   }
@@ -20,7 +19,7 @@ storeController.goHome = (req: Request, res: Response) => {
 storeController.getSignup = (req: Request, res: Response) => {
   try {
     console.log("getSignup");
-    res.send("Signup Page");
+    res.render("signup");
   } catch (err) {
     console.log("Error, getSignup:", err);
   }
@@ -29,7 +28,7 @@ storeController.getSignup = (req: Request, res: Response) => {
 storeController.getLogin = (req: Request, res: Response) => {
   try {
     console.log("getLogin");
-    res.send("Login Page");
+    res.render("login");
   } catch (err) {
     console.log("Error, getLogin:", err);
   }
