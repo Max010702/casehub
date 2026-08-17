@@ -23,7 +23,7 @@ storeController.goHome = (req: Request, res: Response) => {
   }
 };
 
-storeController.processSignup = async (req: AdminRequest, res: Response) => {
+storeController.getSignup = async (req: AdminRequest, res: Response) => {
   try {
     console.log("getSignup");
     res.render("signup");
