@@ -14,10 +14,9 @@ export interface Product {
   productLeftCount: number;
   productBrands: string;
   productColor?: ProductColor;
-  productVolume?: number;
   productDesc?: string;
-  productImages?: string[];
-  productView?: number;
+  productImages: string[];
+  productView: number;
 }
 
 export interface ProductInput {
@@ -28,7 +27,19 @@ export interface ProductInput {
   productLeftCount: number;
   productBrands: string;
   productColor?: ProductColor;
-  productVolume?: number;
+  productDesc?: string;
+  productImages?: string[];
+  productView?: number;
+}
+
+export interface ProductUpdateInput {
+  _id?: ObjectId;
+  productStatus?: ProductStatus;
+  productCategories: ProductCategories;
+  productName?: string;
+  productPrice?: number;
+  productLeftCount?: number;
+  productBrands: string;
   productDesc?: string;
   productImages?: string[];
   productView?: number;
