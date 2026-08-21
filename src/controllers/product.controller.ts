@@ -51,7 +51,7 @@ productController.createNewProduct = async (
     const message =
       err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
     res.send(
-      `<script> alert("Sucessfull creation!"); window.location.replace('admin/product/all') </script>`,
+      `<script> alert("Error: ${message}"); window.location.replace('admin/product/all') </script>`,
     );
   }
 };
