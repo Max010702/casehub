@@ -60,7 +60,6 @@ class MemberService {
     const exist = await this.memberModel
       .findOne({ memberType: MemberType.STORE })
       .exec();
-    console.log("exist:", exist);
 
     if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
 
