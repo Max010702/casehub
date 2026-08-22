@@ -32,7 +32,7 @@ function validateSignupForm() {
   const confirmPassword = $(".confirm-password").val();
 
   if (
-    memberNick == "" ||
+    memberNick === "" ||
     memberPhone === "" ||
     memberPassword === "" ||
     confirmPassword === ""

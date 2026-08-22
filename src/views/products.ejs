@@ -29,7 +29,7 @@
       <div class="board">
         <div class="dishes-table">
           <span class="new-dish-txt" style="margin-bottom: 30px">
-            RESTAURANT MENU
+            PRODUCT LIST
           </span>
           <table class="table table-bordered table-hover">
             <thead class="thead-light">
@@ -37,28 +37,29 @@
                 <th scope="col">T/r</th>
                 <th scope="col">Product Name</th>
                 <th scope="col">Product Type</th>
-                <th scope="col">Product Volume</th>
+                <th scope="col">Product Color</th>
                 <th scope="col">Product Price</th>
                 <th scope="col">Product Left Count</th>
                 <th scope="col">Status</th>
               </tr>
             </thead>
             <!--  LOOP PRODUCTS: START  -->
+            <% products.map(function(value, key) { %>
             <tbody style="background: white">
-              <td>1</td>
-              <td>Steak</td>
-              <td>Dish</td>
-              <td>NORMAL</td>
-              <td>11</td>
-              <td>100</td>
+              <td><%= key + 1 %></td>
+              <td><%= value.productName %></td>
+              <td><%= value.productCategories%></td>
+              <td><%= value.productColor%></td>
+              <td><%= value.productPrice %></td>
+              <td><%= value.productLeftCount %></td>
               <td>
-                <select class="spec-select new-product-status">
-                  <option value="PAUSE" selected>PAUSE</option>
-                  <option value="PROCESS">PROCESS</option>
-                  <option value="DELETE">DELETE</option>
-                </select>
+                <select class="spec-select new-product-status" id="<%= value._id %>">
+                  <option value="PAUSE" <%= value.productStatus === 'PAUSE' ? 'selected': '' %> >PAUSE</option>
+                  <option value="PROCESS" <%= value.productStatus === 'PROCESS' ? 'selected': '' %>  >PROCESS</option>
+                  <option value="DELETE" <%= value.productStatus === 'DELETE' ? 'selected': '' %> >DELETE</option>
               </td>
             </tbody>
+             <% }) %>
             <!--  LOOP PRODUCTS: END  -->
           </table>
           <div
@@ -129,7 +130,7 @@
             </div>
 
             <div class="half-input" id="product-collection">
-              <label>Dish Volume</label>
+              <label>Product Colors</label>
               <select class="product-size" name="productSize">
                 <option value="SMALL">Small</option>
                 <option value="NORMAL" selected>Normal</option>
@@ -137,16 +138,6 @@
                 <option value="SET">Set</option>
               </select>
             </div>
-
-            <div class="half-input" id="product-volume" style="display: none">
-              <label>Drink Volume</label>
-              <select class="product-volume" name="productVolume">
-                <option value="0.5">0,5 liters</option>
-                <option value="1" selected>1 liters</option>
-                <option value="1.2">1,2 liters</option>
-                <option value="1.5">1,5 liters</option>
-                <option value="2">2 liters</option>
-              </select>
             </div>
           </div>
           <div class="long-input">
