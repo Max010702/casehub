@@ -5,13 +5,15 @@ export enum ProductStatus {
 }
 
 export enum ProductCategories {
-  PHONECASES = "PHONECASES",
-  WATCHES = "WATCHES",
-  HEADPHONES = "HEADPHONES",
-  BAGS = "BAGS",
-  WALLETS = "WALLETS",
-  SUNGLASSES = "SUNGLASSES",
-  JEWELERY = "JEWELERY",
+  SOFAS = "SOFAS",
+  CHAIRS = "CHAIRS",
+  TABLES = "TABLES",
+  BEDS = "BEDS",
+  WARDROBES = "WARDROBES",
+  BOOKSHELVES = "BOOKSHELVES",
+  DESKS = "DESKS",
+  DECOR = "DECOR",
+  LIGHTING = "LIGHTING",
   OTHER = "OTHER",
 }
 
@@ -23,7 +25,23 @@ export enum ProductColor {
   NAVY = "NAVY",
   RED = "RED",
   GOLD = "GOLD",
-  SILVER = "NSILVERAVY",
+  SILVER = "SILVER",
   PINK = "PINK",
   GREEN = "GREEN",
+  BEIGE = "BEIGE",
+  CREAM = "CREAM",
+  WALNUT = "WALNUT",
+  OAK = "OAK",
+  NATURAL_WOOD = "NATURAL_WOOD",
+}
+
+export enum ProductMaterial {
+  WOOD = "WOOD",
+  METAL = "METAL",
+  GLASS = "GLASS",
+  FABRIC = "FABRIC",
+  LEATHER = "LEATHER",
+  RATTAN = "RATTAN",
+  PLASTIC = "PLASTIC",
+  VELVET = "VELVET",
 }

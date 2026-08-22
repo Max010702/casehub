@@ -1,67 +1,132 @@
+/* ===== home.css ===== */
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background: url("../img/background.jpg");
+  background-size: cover;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+/* Home Container - Full viewport hero */
 .home-container {
-  position: relative;
-  width: auto;
-  height: auto;
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background: linear-gradient(-45deg, #110303f0, #dd6d04, #011c1afc, #7a6868);
+  position: relative;
+  /* background: linear-gradient(180deg, #f8f6f2 0%, #f0ebe3 100%); */
+  padding: 40px 20px;
 }
 
-.home-container a {
+/* Navigation Menu */
+.navigation-menu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.navigation-menu .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-menu .nav-item {
+  list-style: none;
+}
+
+.navigation-menu .nav-link {
+  display: inline-block;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
   text-decoration: none;
-  color: #000000;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
 }
 
-.home-container .nav-item a {
-  color: #e3c08d;
+.navigation-menu .nav-link:hover {
+  color: #1a1a1a;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-.home-container .nav-item a.disabled {
-  color: #898071;
+.navigation-menu .nav-link.active {
+  color: #1a1a1a;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  font-weight: 600;
 }
 
-.home-container .navigation-menu {
-  position: relative;
-  z-index: 10000;
-  color: #efefee;
-  font-size: 40px;
-  font-family: monospace;
+.home-container .slogan-text {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 80px;
+  font-weight: 800;
+  color: #1c1c1c;
+  text-align: center;
+  line-height: 1.25;
+  max-width: 900px;
+  margin-bottom: 200px;
+  letter-spacing: -0.5px;
 }
 
-.home-container .animation-frame {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 55px;
+.slogan-text::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #c4a574;
+  margin: 28px auto 0;
+  border-radius: 2px;
 }
 
-.home-container .animation-wrapper {
-  position: relative;
-  width: 775px;
-  height: 775px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Responsive */
+@media (max-width: 768px) {
+  .navigation-menu {
+    top: 24px;
+  }
+
+  .navigation-menu .nav {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .navigation-menu .nav-link {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .slogan-text {
+    padding: 0 16px;
+  }
 }
 
-.home-container .sphere-animation {
-  position: relative;
-  width: 580px;
-  height: 580px;
-}
-
-.home-container .sphere path {
-  fill: url(#sphereGradient);
-  stroke-width: 1px;
-  stroke: rgba(80, 80, 80, 0.35);
-  backface-visibility: hidden;
-}
-
-@media (min-width: 500px) {
-  .sphere path {
-    stroke-width: 0.4px;
+@media (max-width: 480px) {
+  .navigation-menu .nav-link {
+    padding: 7px 12px;
+    font-size: 13px;
   }
 }
