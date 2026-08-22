@@ -30,7 +30,6 @@ productController.createNewProduct = async (
 ) => {
   try {
     console.log("createNewProduct");
-    console.log("req.files:", req.files);
 
     if (!req.files?.length)
       throw new Errors(HttpCode.INTERNAL_SERVER_ERROR, Message.CREATE_FAILED);
@@ -44,14 +43,14 @@ productController.createNewProduct = async (
 
     await productService.createNewProduct(data);
     res.send(
-      `<script> alert("Sucessfull creation!"); window.location.replace('admin/product/all') </script>`,
+      `<script> alert("Sucessfull creation!"); window.location.replace('/admin/product/all') </script>`,
     );
   } catch (err) {
     console.log("Error, createNewProduct:", err);
     const message =
       err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
     res.send(
-      `<script> alert("Error: ${message}"); window.location.replace('admin/product/all') </script>`,
+      `<script> alert("Error: ${message}"); window.location.replace('/admin/product/all') </script>`,
     );
   }
 };
