@@ -21,9 +21,9 @@ const productSchema = new Schema(
     },
 
     productColor: {
-      type: String,
+      type: [String],
       enum: ProductColor,
-      required: true,
+      default: [],
     },
 
     productMaterials: {
