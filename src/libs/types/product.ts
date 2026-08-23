@@ -19,6 +19,14 @@ export interface Product {
   productView: number;
 }
 
+export interface ProductInquiry {
+  order: string;
+  page: number;
+  limit: number;
+  productCategories?: ProductCategories;
+  search?: string;
+}
+
 export interface ProductInput {
   productStatus: ProductStatus;
   productCategories: ProductCategories;
