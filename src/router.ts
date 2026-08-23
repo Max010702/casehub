@@ -35,5 +35,9 @@ router.get(
 );
 
 /* Order */
-
+router.post(
+  "/order/create",
+  memberController.verifyAuth,
+  orderController.createOrder,
+);
 export default router;
